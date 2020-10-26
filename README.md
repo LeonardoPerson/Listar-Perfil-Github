@@ -3,7 +3,7 @@
 Este projeto é uma landing page que permite listar perfis do Github simplesmente digitando um nome válido de algum perfil no respectivo campo de busca.
 O código foi contruído utilizando apenas HTML5, SCSS e Javascript sem frameworks.<br/>
 A landing page está responsiva conforme recursos do flex pelo SCSS.
-Para acessá-lo, basta carregar o arquvo "index.html" no navegador. <br/>
+Para acessá-la, basta carregar o arquvo "index.html" no navegador. <br/>
 
 
 
