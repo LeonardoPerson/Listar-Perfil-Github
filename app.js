@@ -88,7 +88,7 @@ const addProfileInDOM = async (user) => {
         <div class="following">SEGUINDO: ${profile["following"]}</div>
       </div>
       <div class="repo-button">
-        <input type="button" id="repo-list" onclick="toggleRepo()" value="ESCONDER REPOSITÓRIO"/>          
+        <input type="button" id="repo-list" onclick="toggleRepo()" value="ESCONDER REPOSITÓRIOS"/>          
         <input type="button" id="repo-starred" onclick="toggleFav()" href="#show-favorities" value="ESCONDER FAVORITOS"/>      
       </div>
     </div>  
@@ -114,7 +114,7 @@ const addRepositoriesInDOM = async (user) => {
 
   profileShowRepositories.innerHTML += `
     <div class="profileShowRepositories">
-      <div class="titleListRepositories">LISTA DE REPOSITÓRIO</div>
+      <div class="titleListRepositories">LISTA DE REPOSITÓRIOS</div>
       ${showRepositoriesTemplate}
     </div>
   `
@@ -150,11 +150,11 @@ let flagRepo = 1
 const toggleRepo = () => {      
   if(flagRepo === 1){
     document.getElementById('show-repositories').style.display='none'
-    document.getElementById('repo-list').value = 'VER REPOSITÓRIO'
+    document.getElementById('repo-list').value = 'VER REPOSITÓRIOS'
     flagRepo = 0      
   }else{      
     document.getElementById('show-repositories').style.display='block'      
-    document.getElementById('repo-list').value = 'ESCONDER REPOSITÓRIO'
+    document.getElementById('repo-list').value = 'ESCONDER REPOSITÓRIOS'
     flagRepo = 1
   }
 }
