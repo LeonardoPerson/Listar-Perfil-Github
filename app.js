@@ -74,7 +74,7 @@ const addProfileInDOM = async (user) => {
       `
       return
   }
-  background["value"] = "show-totalInfo" 
+  background["value"] = "show-totalInfo"
   
   const profileTemplate = `    
     <div class="profile">
