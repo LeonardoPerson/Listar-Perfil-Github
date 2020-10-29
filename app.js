@@ -86,13 +86,7 @@ const addProfileInDOM = async (user) => {
         <div class="repo-number">REPOSITÓRIOS: ${profile["public_repos"]}</div>
         <div class="followers">SEGUIDORES: ${profile["followers"]}</div>
         <div class="following">SEGUINDO: ${profile["following"]}</div>
-      </div>
-      <div class="repo-button">
-        <input type="button" id="repo-list" onclick="toggleRepo()" value="ESCONDER REPOSITÓRIO"/>          
-        <input type="button" id="repo-starred" onclick="toggleFav()" href="#show-favorities" value="ESCONDER FAVORITOS"/>
-      <div class="repo-button">
-        <input type="button" id="repo-list" onclick="toggleRepo()" value="ESCONDER REPOSITÓRIO"/>          
-        <input type="button" id="repo-starred" onclick="toggleFav()" href="#show-favorities" value="ESCONDER FAVORITOS"/>
+      </div>        
       <div class="repo-button">
         <input type="button" id="repo-list" onclick="toggleRepo()" value="ESCONDER REPOSITÓRIOS"/>          
         <input type="button" id="repo-starred" onclick="toggleFav()" href="#show-favorities" value="ESCONDER FAVORITOS"/>
