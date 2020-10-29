@@ -292,6 +292,10 @@ input:focus {
     margin-left: auto; }
 
   input {
-    width: 15rem; } }
+    width: 15rem; }
+
+  .titleListRepositories, .titleListFavorities {
+    margin-left: 0rem;
+    margin-right: 0rem; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -178,6 +178,7 @@ input:focus{
   "avatar repo repo"
   "avatar repo repo"
   "visit-profile repo-button repo-button"; 
+
 }
 
 .avatar{
@@ -376,6 +377,15 @@ input:focus{
 
   input{
     width: 15rem;
+  }
+
+  .titleListRepositories, .titleListFavorities{ 
+    background-color: rgb(119, 119, 119); 
+    color: $colorWhiteGeral;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
   }
 
 }

@@ -4,14 +4,14 @@ const profileShowRepositories = document.querySelector('#show-repositories')
 const profileShowFavorities = document.querySelector('#show-favorities')
 const profilenotfoundContainer = document.querySelector('#profilenotfound')
 const background = document.querySelector('.show-totalInfo').classList
-background["value"] = "show-totalInfoInicial"
+background['value'] = 'show-totalInfoInicial'
 const api = `https://api.github.com/users/`
 
 //Buscando o perfil do usuário com chamada em outras funções--------------------
 const getProfile = async (user) => {
   const responseProfile = await fetch(api + user)  
-  if(responseProfile["status"] === 404){    
-      return "not found"
+  if(responseProfile['status'] === 404){    
+      return 'not found'
   }
   return responseProfile.json()  
 }
@@ -19,7 +19,7 @@ const getProfile = async (user) => {
 //Buscando repositórios---------------------------------------------------------
 const getRepositories = async (user) => {
   const profile = await getProfile(user)
-  const responseRepositories = await fetch(profile["repos_url"])
+  const responseRepositories = await fetch(profile['repos_url'])
   const listRepositories = await responseRepositories.json()
   const nameRepositories = listRepositories.map(item => item.name)
   return nameRepositories
@@ -49,9 +49,9 @@ const searchProfile = (() => {
     emptyContainer.innerHTML = ''
     profilenotfoundContainer.innerHTML = ''
     if(!searchTerm){
-      background["value"] = "show-totalInfoInicial"
+      background['value'] = 'show-totalInfoInicial'
       emptyContainer.innerHTML = `
-        <div class="warning-message">Digite um nome válido.</div>
+        <div class='warning-message'>Digite um nome válido.</div>
       `
       return
     }
@@ -68,28 +68,28 @@ const searchProfile = (() => {
 const addProfileInDOM = async (user) => {  
   const profile = await getProfile(user)  
   if(profile === 'not found'){
-    background["value"] = "show-totalInfoInicial"
+    background['value'] = 'show-totalInfoInicial'
     profilenotfoundContainer.innerHTML += `
-        <div class="warning-message">Perfil não encontrado.</div>
+        <div class='warning-message'>Perfil não encontrado.</div>
       `
       return
   }
-  background["value"] = "show-totalInfo" 
+  background['value'] = 'show-totalInfo' 
   
   const profileTemplate = `    
-    <div class="profile">
-      <img src="${profile["avatar_url"]}" class="avatar"/>
-      <a href="${profile["html_url"]}" target="_blank" class="visit-profile">
+    <div class='profile'>
+      <img src='${profile['avatar_url']}' class='avatar'/>
+      <a href='${profile['html_url']}' target='_blank' class='visit-profile'>
         Visitar Perfil
       </a>
-      <div class="repo">
-        <div class="repo-number">REPOSITÓRIOS: ${profile["public_repos"]}</div>
-        <div class="followers">SEGUIDORES: ${profile["followers"]}</div>
-        <div class="following">SEGUINDO: ${profile["following"]}</div>
+      <div class='repo'>
+        <div class='repo-number'>REPOSITÓRIOS: ${profile['public_repos']}</div>
+        <div class='followers'>SEGUIDORES: ${profile['followers']}</div>
+        <div class='following'>SEGUINDO: ${profile['following']}</div>
       </div>
-      <div class="repo-button">
-        <input type="button" id="repo-list" onclick="toggleRepo()" value="ESCONDER REPOSITÓRIO"/>          
-        <input type="button" id="repo-starred" onclick="toggleFav()" href="#show-favorities" value="ESCONDER FAVORITOS"/>      
+      <div class='repo-button'>
+        <input type='button' id='repo-list' onclick='toggleRepo()' value='ESCONDER REPOSITÓRIO'/>          
+        <input type='button' id='repo-starred' onclick='toggleFav()' href='#show-favorities' value='ESCONDER FAVORITOS'/>      
       </div>
     </div>  
   `  
@@ -103,18 +103,18 @@ const addRepositoriesInDOM = async (user) => {
     let contadorRep = 0
     for(item of repositories){   
       if(contadorRep % 2 === 0){
-        color = "itemRepositories1"
+        color = 'itemRepositories1'
         contadorRep += 1
       }else{
-        color = "itemRepositories2"
+        color = 'itemRepositories2'
         contadorRep += 1
       }
       showRepositoriesTemplate +=`<div class=${color}>${item}</div>`
     } 
 
   profileShowRepositories.innerHTML += `
-    <div class="profileShowRepositories">
-      <div class="titleListRepositories">LISTA DE REPOSITÓRIO</div>
+    <div class='profileShowRepositories'>
+      <div class='titleListRepositories'>LISTA DE REPOSITÓRIO</div>
       ${showRepositoriesTemplate}
     </div>
   `
@@ -127,18 +127,18 @@ const addFavoritiesInDOM = async (user) => {
     let contadorFav = 0;
       for(item of starred){  
         if(contadorFav % 2 === 0){
-          color = "itemRepositories1"
+          color = 'itemRepositories1'
           contadorFav += 1
         }else{
-          color = "itemRepositories2"
+          color = 'itemRepositories2'
           contadorFav += 1
         }  
         showFavoritiesTemplate +=`<div class=${color}>${item}</div>`
       } 
 
   profileShowFavorities.innerHTML += `
-    <div class="profileShowFavorities">
-      <div class="titleListFavorities">LISTA DE FAVORITOS</div>
+    <div class='profileShowFavorities'>
+      <div class='titleListFavorities'>LISTA DE FAVORITOS</div>
       ${showFavoritiesTemplate}
     </div>
   `   
