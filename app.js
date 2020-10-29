@@ -87,19 +87,16 @@ const addProfileInDOM = async (user) => {
         <div class='followers'>SEGUIDORES: ${profile['followers']}</div>
         <div class='following'>SEGUINDO: ${profile['following']}</div>
       </div>
-<<<<<<< HEAD
       <div class='repo-button'>
         <input type='button' id='repo-list' onclick='toggleRepo()' value='ESCONDER REPOSITÓRIO'/>          
         <input type='button' id='repo-starred' onclick='toggleFav()' href='#show-favorities' value='ESCONDER FAVORITOS'/>      
-||||||| 9612e94
       <div class="repo-button">
         <input type="button" id="repo-list" onclick="toggleRepo()" value="ESCONDER REPOSITÓRIO"/>          
-        <input type="button" id="repo-starred" onclick="toggleFav()" href="#show-favorities" value="ESCONDER FAVORITOS"/>      
-=======
+        <input type="button" id="repo-starred" onclick="toggleFav()" href="#show-favorities" value="ESCONDER FAVORITOS"/>
       <div class="repo-button">
         <input type="button" id="repo-list" onclick="toggleRepo()" value="ESCONDER REPOSITÓRIOS"/>          
         <input type="button" id="repo-starred" onclick="toggleFav()" href="#show-favorities" value="ESCONDER FAVORITOS"/>      
->>>>>>> 9e89ac696f56fab9daf170c3f19ff4973eb94d69
+
       </div>
     </div>  
   `  
@@ -123,16 +120,12 @@ const addRepositoriesInDOM = async (user) => {
     } 
 
   profileShowRepositories.innerHTML += `
-<<<<<<< HEAD
     <div class='profileShowRepositories'>
       <div class='titleListRepositories'>LISTA DE REPOSITÓRIO</div>
-||||||| 9612e94
     <div class="profileShowRepositories">
       <div class="titleListRepositories">LISTA DE REPOSITÓRIO</div>
-=======
     <div class="profileShowRepositories">
       <div class="titleListRepositories">LISTA DE REPOSITÓRIOS</div>
->>>>>>> 9e89ac696f56fab9daf170c3f19ff4973eb94d69
       ${showRepositoriesTemplate}
     </div>
   `
